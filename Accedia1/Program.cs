@@ -4,6 +4,7 @@
 	{
 		static void Main(string[] args)
 		{
+			//Sort the array using 4-bit unsigned binary values of array numbers
 			int[] arr = new int[] { 1, 27, 16, 4 };
 
 			Array.Sort(arr, (a,b) =>
