@@ -15,29 +15,29 @@
 				return lastFourBitsA.CompareTo(lastFourBitsB);
 			});
 
-            Console.WriteLine(String.Join(", ", arr));
+            		Console.WriteLine(String.Join(", ", arr));
 
 			// Practice If-Else
 			// looping through different scenarios about Fizz and Buzz
 			for(int i = 1;i<=n; i++)
 			{
-                if(i % 3 == 0 && i % 5 != 0)
-                {
-                    Console.WriteLine("Fizz");
-                }
-                else if(i % 5 == 0 && i % 3 != 0)
-                {
-                    Console.WriteLine("Buzz");
-                }
-                else if(i % 5 == 0 && i % 3 == 0)
-                {
-                    Console.WriteLine("FizzBuzz");
-                }
-                else
-                {
-                    Console.WriteLine(i);
-                }
-            }
-        }
+		                if(i % 3 == 0 && i % 5 != 0)
+		                {
+		                    Console.WriteLine("Fizz");
+		                }
+		                else if(i % 5 == 0 && i % 3 != 0)
+		                {
+		                    Console.WriteLine("Buzz");
+		                }
+		                else if(i % 5 == 0 && i % 3 == 0)
+		                {
+		                    Console.WriteLine("FizzBuzz");
+		                }
+		                else
+		                {
+		                    Console.WriteLine(i);
+		                }
+            		}
+        	}
 	}
 }
