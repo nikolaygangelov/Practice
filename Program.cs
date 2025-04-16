@@ -41,7 +41,7 @@
 		                }
             		}
 
-			//Task 3
+			// Task 3
 			// Define the distinct couples of elements in an array whose sum is 12. A distinct couples are (3,9), (9,3) but (6,6) counts one time.  
 			int[] nums = { 3, 9, 3, 6, 6, 6, 0, 12 };
 		        int targetSum = 12;
@@ -70,6 +70,32 @@
 		        foreach (var pair in pairCounts)
 		        {
 		            Console.WriteLine($"({pair.Key})");
+		        }
+
+			// Task 4
+			// Moving through directories with minimum steps – What are the number of minimum steps to go back to first place 
+			// if possible moves are “./” (no move), “../” (goes 1 level up), “x" or other letter (goes 1 level down) 
+			// and actual moves are [“x/”, “y/”, “../”, “./”, “z/”]?
+			
+		        string[] moves = {"x", "y", "../", "./", "z"};
+		        int minSteps = 0;
+			
+		        for (int i = 0; i < moves.Length; i++)
+		        {
+		            if(moves[i] == "../")
+		            {
+		                Console.WriteLine("up");
+		                Console.WriteLine(--minSteps);
+		            }
+		            else if(moves[i] == "./")
+		            {
+		                Console.WriteLine("no move");
+		            }
+		            else if((int)moves[i][0] > 96 && (int)moves[i][0] < 123)
+		            {
+		                Console.WriteLine("down");
+		                Console.WriteLine(++minSteps);
+		            }
 		        }
         	}
 	}
