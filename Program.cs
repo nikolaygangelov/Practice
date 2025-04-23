@@ -100,3 +100,39 @@
         	}
 	}
 }
+
+// Task 5 (SQL)
+// Select the names of employees who are in departments shared by more than one employee (i.e., duplicated Department_Ids)
+
+CREATE DATABASE DuplicatedIds
+USE DuplicatedIds
+
+CREATE TABLE Employees(
+Employee_Id INT NOT NULL IDENTITY(1,1),
+First_Name VARCHAR(20) NULL,
+Last_Name VARCHAR(25) NULL,
+Department_Id INT NOT NULL,
+Salary DECIMAL(8,2) NULL)
+
+INSERT INTO Employees(First_Name, Last_Name, Department_Id, Salary)
+	VALUES(
+'John', 'Smith', 5, 5000),
+('Joe', 'Workman', 10, 10000),
+('Fred', 'Jones', 5, 15000),
+('Fred', 'Jones', 10, 20000),
+('Harry', 'Collins', 5, 25000),
+('Julie', 'Campbell', 23, 19000)
+
+UPDATE Employees
+   SET First_Name = 'Jamy', Last_Name = 'Oliver'
+ WHERE Employee_Id = 4
+
+ SELECT First_Name, Last_Name, Department_Id
+   FROM Employees
+  WHERE Department_Id IN (
+      SELECT Department_Id
+      FROM Employees
+      GROUP BY Department_Id
+      HAVING COUNT(Department_Id) > 1)
+ORDER BY Department_Id
+
