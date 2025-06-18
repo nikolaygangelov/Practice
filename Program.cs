@@ -77,7 +77,7 @@
 			// if possible moves are “./” (no move), “../” (goes 1 level up), “x" or other letter (goes 1 level down) 
 			// and actual moves are [“x/”, “y/”, “../”, “./”, “z/”]?
 			
-		        string[] moves = {"x", "y", "../", "./", "z"};
+		        string[] moves = {"x/", "y/", "../", "./", "z/"};
 		        int minSteps = 0;
 			
 		        for (int i = 0; i < moves.Length; i++)
